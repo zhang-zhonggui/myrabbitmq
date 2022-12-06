@@ -18,6 +18,9 @@ public class FanoutProducer {
     private RabbitTemplate rabbitTemplate;
 
     public void sendFanout(String msg) {
+        /**
+         * @param 绑定路由与发送的信息，queue可以选项绑定或者不绑定
+         */
         rabbitTemplate.convertAndSend(EXCHANGE_FANOUT, msg);
     }
 }
